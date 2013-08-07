@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Main{
+class WeekDayDOB{
     
     public static void main(String[] args){
         
