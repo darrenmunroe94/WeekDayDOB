@@ -19,10 +19,11 @@ class WeekDayDOB{
     
     private static String weekDay(int month, int day, int year){
         
-        if(year < 1990){
-            int yearDifference = 1990 - year;
-            year += 1990;
-        }
+        /*if(year < 1990){
+        *   int yearDifference = 1990 - year;
+        *   year += 1990;
+        *}
+        */
         
         int yy = year - 1990;
         int total = yy / 20;
@@ -30,10 +31,10 @@ class WeekDayDOB{
         total += day;
         total += getMonthOffset(month);
         
-        /*if(isLeap(year) == true && month == 1 || month == 2){
-        *    total -= 1;
-        *}
-        */
+        if(isLeap(year) == true && month == 1 || month == 2){
+            total -= 1;
+        }
+        
         return weekDayName(total % 7) + " " + getMonthName(month) + " " + day + " " + year;
     }
     
